@@ -1,0 +1,132 @@
+{
+    "_type": "export",
+    "__export_format": 4,
+    "__export_date": "2025-02-16T09:52:08.504Z",
+    "__export_source": "insomnia.desktop.app:v10.3.1",
+    "resources": [
+        {
+            "_id": "req_027124adc75b489e829489eaf5c2cd05",
+            "parentId": "wrk_e33dca24b345440191d83404ba175c9a",
+            "modified": 1739699416172,
+            "created": 1739523361877,
+            "url": "http://api.openweathermap.org/geo/1.0/zip?zip=80214&appid=80bdfc0c7bdae9434f8bc5ead971fb55",
+            "name": "New Request",
+            "description": "",
+            "method": "GET",
+            "body": {
+                "mimeType": "application/json",
+                "text": "http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid={API key}\n\n\nhttp://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid={API key}"
+            },
+            "parameters": [
+                {
+                    "name": "appid",
+                    "value": "80bdfc0c7bdae9434f8bc5ead971fb55",
+                    "id": "pair_86beaf0004b64116960cd8a1e9b48d04"
+                },
+                {
+                    "id": "pair_a67cd45e76494701ac198b795a358b51",
+                    "name": "city",
+                    "value": "Denver",
+                    "description": "",
+                    "disabled": false
+                },
+                {
+                    "id": "pair_b04319d963ea4509ac009790000b371e",
+                    "name": "country",
+                    "value": "US",
+                    "description": "",
+                    "disabled": false
+                },
+                {
+                    "name": "lat",
+                    "value": "39.7392364",
+                    "id": "pair_dcd515cebf9d487a88215e7ccdaaf31b"
+                },
+                {
+                    "name": "lon",
+                    "value": "-104.984862",
+                    "id": "pair_eb63d3eda29140e5ac1af36bb2620d61"
+                }
+            ],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "insomnia/10.3.1",
+                    "id": "pair_75ca0d267e534854a20ddc5cec1a37b5",
+                    "disabled": true
+                }
+            ],
+            "authentication": {
+                "type": "apikey",
+                "disabled": false,
+                "key": "80bdfc0c7bdae9434f8bc5ead971fb55",
+                "value": "",
+                "addTo": "cookie"
+            },
+            "preRequestScript": "\n// insomnia.environment.get(\"country\");\n\n// http://api.openweathermap.org/geo/1.0/zip?zip=80214&appid=80bdfc0c7bdae9434f8bc5ead971fb55\n\n// http://api.openweathermap.org/data/2.5/forecase?lat=50.8609&lon=-0.08014&&units=metric",
+            "metaSortKey": -1739523361877,
+            "isPrivate": false,
+            "pathParameters": [],
+            "afterResponseScript": "\n\nconst textBody = insomnia.response.text();\n\n\n\n",
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "wrk_e33dca24b345440191d83404ba175c9a",
+            "parentId": null,
+            "modified": 1739523360344,
+            "created": 1739523360344,
+            "name": "Weather API",
+            "description": "",
+            "scope": "collection",
+            "_type": "workspace"
+        },
+        {
+            "_id": "env_3f916c3018938b9a9fc5ad225fecff8aed3242a2",
+            "parentId": "wrk_e33dca24b345440191d83404ba175c9a",
+            "modified": 1739699455169,
+            "created": 1739523360345,
+            "name": "Base Environment",
+            "data": {},
+            "dataPropertyOrder": {},
+            "color": null,
+            "isPrivate": false,
+            "metaSortKey": 1739523360345,
+            "environmentType": "kv",
+            "_type": "environment"
+        },
+        {
+            "_id": "jar_3f916c3018938b9a9fc5ad225fecff8aed3242a2",
+            "parentId": "wrk_e33dca24b345440191d83404ba175c9a",
+            "modified": 1739699455169,
+            "created": 1739523360346,
+            "name": "Default Jar",
+            "cookies": [
+                {
+                    "id": "e4f99f0d-af01-4316-80ee-329eb12d0dbf",
+                    "key": "_members_session_1473164855",
+                    "value": "VnlBNjhQQXp3cFZzK1Avc1BKUERHaUhpeThJQnhhdGRNT05zRDczSGo2VmV1RmZLeDVweVVVaWVsaVhWQlBURzRNSFZKb1Y3OWhwdmJObVM2ZnhZMm5LSTZSUlZaMUxoeWRPOGNzbzUvUFIwUEZkL0JMQnl0WUlFL04rb0VXRDIxQk0yZG1wMEVNVEM3VGFxMGU2ZlQxUEZYYVM2NjlLdVVoaXZTTmhXRUtiWWI0My9VS081YTRnb1RRY3l1SitxLS1qSklBSVc2Z1J4YW4wS2owVkY5N1N3PT0%3D--e67fbb0c6a55bab58165f18ac708e3954735a365",
+                    "expires": "Infinity",
+                    "domain": "home.openweathermap.org",
+                    "path": "/",
+                    "secure": false,
+                    "httpOnly": true,
+                    "extensions": [],
+                    "creation": "2025-02-14T08:57:37.515Z",
+                    "hostOnly": true,
+                    "lastAccessed": "2025-02-14T08:57:49.618Z"
+                }
+            ],
+            "_type": "cookie_jar"
+        }
+    ]
+}

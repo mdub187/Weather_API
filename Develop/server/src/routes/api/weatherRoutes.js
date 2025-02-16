@@ -18,7 +18,7 @@ const options = {
         'Transfer-Encoding': 'chunked',
         Connection: 'keep-alive',
         'Cache-Control': 'private, must-revalidate',
-        pragma: 'no-cache',
+        pragma: 'cache',
         expires: '-1',
         'Set-Cookie': 'winter_session=eyJpdiI6InBrZE1XamdOT2RLdFROUno5RytHZWc9PSIsInZhbHVlIjoiSUE5bklzT29WSVI5TG1GcG1OdUE4YzYvRW1kSlMxQTMyVGJaNXlDbHduai91Q1ljVkRrWi9wdk5aYzd5TmFrY0NaOXhNcnhEMG9Gd0djNTJDMFk4d09qbHlYaTBHclRzMk0rU1JJZVVJd2U5d2I4cWlIem1HSTZVblJ6WFA0ZGoiLCJtYWMiOiIwMmIyZjZjNTIzNTljMDU4MjM5NmVlOTA3ODkyOTUxZjg2Nzk1MGIzYjYyNjlkNmZlOGQ0OGE4ODY2N2ExMDliIiwidGFnIjoiIn0%3D; expires=Mon, 27 Jan 2025 05:44:47 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
     },
@@ -34,3 +34,20 @@ router.get('/history', async (req, res) => { });
 // * BONUS TODO: DELETE city from search history
 router.delete('/history/:id', async (req, res) => { });
 export default router;
+
+
+function getWeather(city, callback) {
+    var url = 'http://api.openweathermap.org/data/2.5/weather';
+    $.ajax({
+      dataType: "jsonp",
+      url: url,
+      jsonCallback: 'jsonp',
+      data: { q: city },
+      cache: false,
+      success: function (data) {
+          data.city = city;
+          callback(data);
+      }
+    });
+  };
+  elelement.innerHTML = getWeather;
